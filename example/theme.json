@@ -1,55 +1,79 @@
 {
   "colors": {
-    "Gray 1": "#333333",
-    "Gray 2": "#4f4f4f",
-    "Gray 3": "#828282",
-    "Gray 4": "#bdbdbd",
-    "Gray 5": "#e0e0e0",
-    "Gray 6": "#f2f2f2",
-    "Red": "#eb5757",
-    "Orange": "#ff0000",
-    "Yellow": "#f2c94c",
-    "Green 1": "#219653",
-    "Green 2": "#27ae60",
-    "Green 3": "#6fcf97",
-    "Blue 1": "#2f80ed",
-    "Blue 2": "#2d9cdb",
-    "Blue 3": "#56ccf2",
-    "Purple 1": "#9b51e0",
-    "Purple 2": "#bb6bd9"
+    "orange-d1": "#db6109",
+    "orange": "#fa6f0a",
+    "poison": [
+      "#000000",
+      "#000000"
+    ],
+    "peach": [
+      "#000000",
+      "#000000"
+    ],
+    "apricot": [
+      "#000000",
+      "#000000"
+    ],
+    "bubblegum": [
+      "#000000",
+      "#000000"
+    ],
+    "night-sky": [
+      "#000000",
+      "#000000"
+    ],
+    "toxic": [
+      "#000000",
+      "#000000"
+    ],
+    "sky": [
+      "#000000",
+      "#000000"
+    ]
   },
   "textStyles": {
     "h1": {
-      "fontFamily": "Roboto",
-      "fontWeight": 400,
+      "fontFamily": "Quicksand",
+      "fontWeight": 700,
+      "fontSize": 30,
+      "lineHeight": 0.32
+    },
+    "h2": {
+      "fontFamily": "Quicksand",
+      "fontWeight": 700,
       "fontSize": 24,
       "lineHeight": 1
     },
-    "h2": {
-      "fontFamily": "Roboto",
+    "h3": {
+      "fontFamily": "Quicksand",
       "fontWeight": 400,
-      "fontSize": 18,
+      "fontSize": 20,
       "lineHeight": 1
     },
-    "h3": {
-      "fontFamily": "Roboto",
+    "body": {
+      "fontFamily": "Ubuntu",
       "fontWeight": 400,
       "fontSize": 16,
-      "lineHeight": 1
+      "lineHeight": 1.05
     }
   },
   "fonts": [
-    "Roboto"
+    "Quicksand",
+    "Ubuntu"
   ],
   "fontSizes": [
     16,
-    18,
-    24
+    20,
+    24,
+    30
   ],
   "fontWeights": [
-    400
+    400,
+    700
   ],
   "lineHeights": [
-    1
+    0.32,
+    1,
+    1.05
   ]
 }

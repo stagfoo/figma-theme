@@ -51,6 +51,42 @@ const Data = struct.partial({
 
 const unique = arr => [...new Set(arr)]
 
+
+function getCromaColor(color){
+  const { r, g, b, a } = color
+  const rgb = [ r, g, b ].map(n => n * 255)
+  const chromaColor = chroma.rgb(rgb)
+  return chromaColor;
+}
+
+
+function isGradient(fill){
+  return typeof fill['gradientStops'] !== 'undefined';
+}
+
+function getColorFill(fill, style){
+  const color = getCromaColor(fill.color);
+  return {
+    id: style.id,
+    name: style.name,
+    value: color.hex()
+  }
+}
+function getGradientFill(fill, style){
+  const { gradientStops } = fill;
+  const colors = gradientStops.map(color => {
+    console.log(color);
+    return getCromaColor(color).hex();
+  })
+  return {
+    id: style.id,
+    name: style.name,
+    value: colors
+  }
+}
+
+
+
 module.exports = (data, opts = {}) => {
   Data(data)
   const {
@@ -72,16 +108,13 @@ module.exports = (data, opts = {}) => {
     const child = children
       .find(child => get(child, 'styles.fill') === style.id)
     if (!child) return
-
     const [ fill = {} ] = child.fills || []
-    const { r, g, b, a } = fill.color
-    const rgb = [ r, g, b ].map(n => n * 255)
-    const color = chroma.rgb(rgb)
-    return {
-      id: style.id,
-      name: style.name,
-      value: color.hex()
+    if(isGradient(fill)){
+      return getGradientFill(fill, style);
+    } else {
+      return getColorFill(fill, style);
     }
+
   })
   .filter(Boolean)
 

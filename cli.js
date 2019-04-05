@@ -106,8 +106,7 @@ figma.file(id)
     }
   })
   .catch(err => {
-    const { response } = err
-    log.error(response.status, response.statusText)
+    log.error(err)
     process.exit(1)
   })
 
