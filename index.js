@@ -53,8 +53,9 @@ const unique = arr => [...new Set(arr)]
 
 
 function getCromaColor(color){
-  const { r, g, b, a } = color
+  const { r, g, b, a } = color;
   const rgb = [ r, g, b ].map(n => n * 255)
+  console.log(color);
   const chromaColor = chroma.rgb(rgb)
   return chromaColor;
 }
@@ -74,9 +75,8 @@ function getColorFill(fill, style){
 }
 function getGradientFill(fill, style){
   const { gradientStops } = fill;
-  const colors = gradientStops.map(color => {
-    console.log(color);
-    return getCromaColor(color).hex();
+  const colors = gradientStops.map(stop => {
+    return getCromaColor(stop.color).hex();
   })
   return {
     id: style.id,
